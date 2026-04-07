@@ -5,7 +5,7 @@
 This repository contains the code used in the study titled:
 
 **Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions**,  
-submitted to *Science*.
+submitted to ***Science***.
 
 ---
 
