@@ -5,7 +5,7 @@
 This repository contains the code used in the study titled:
 
 **Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions**,  
-submitted to **Science**.
+submitted to *Science*.
 
 ---
 
@@ -39,7 +39,7 @@ All analyses rely on publicly available datasets:
 
 ## 2. Code
 
-### `Fig_1A_S1-S5_moving_window_regression_annual.py`
+#### `Fig_1A_S1-S5_moving_window_regression_annual.py`
 
 Performs moving-window linear regression (11×11 pixels, log1p-transformed) between satellite-derived chlorophyll *a* concentrations and shipping NOₓ emissions for each year from 2013 to 2017. For each pixel, the regression yields slope, Pearson correlation coefficient (r), R², and p-value. Only pixels with R² ≥ 0.6 are retained.
 
@@ -57,7 +57,7 @@ Console outputs:
 
 ---
 
-### `Fig_2A_nmean_density_2017.py`
+#### `Fig_2A_nmean_density_2017.py`
 
 Runs moving-window regression on 2017 chlorophyll *a* and NOₓ emission rasters, then maps each regression pixel to the nearest grid cell in a 1° World Ocean Atlas nitrogen concentration dataset (mean N at 60 m depth). Pixels are grouped into three categories based on regression results (R² ≥ 0.6): significantly positive correlation, significantly negative correlation, and all grid cells. For each group, an area-weighted kernel density estimate (KDE) of nitrogen concentration is computed and plotted, with x-axis zoomed to 0–8 µmol kg⁻¹.
 
@@ -66,7 +66,7 @@ Outputs:
 
 ---
 
-### `Fig_2B_chlor_nox_correlated_area_histogram.py`
+#### `Fig_2B_chlor_nox_correlated_area_histogram.py`
 
 Performs moving-window linear regression (11×11 pixels, log1p-transformed) between chlorophyll *a* and shipping NOₓ emissions for each year from 2013 to 2017, then extracts NOₓ emission values at pixels with significant correlations (R² ≥ 0.6). Pixels are split by slope sign into positively and negatively correlated groups. For each group, an area-weighted histogram is computed using spherical pixel areas.
 
@@ -77,7 +77,7 @@ Outputs per year + pooled (2013–2017):
 
 ---
 
-### `Fig_3A_global_linear_fit.py`
+#### `Fig_3A_global_linear_fit.py`
 
 Extracts pixel-level chlorophyll *a* concentrations and NOₓ emission values from annual rasters (2013–2017) within five predefined AOIs using GeoJSON masks. A pooled ordinary least squares regression is fitted using data from AOI 1–4 only, excluding AOI 5 due to its anomalously high response. The regression yields slope, intercept, R², and 95% confidence intervals for the slope and intercept.
 
@@ -92,7 +92,7 @@ Console outputs:
 
 ---
 
-### `Fig_3A_per_aoi_scatter.py`
+#### `Fig_3A_per_aoi_scatter.py`
 
 Extracts pixel-level chlorophyll *a* and NOₓ values from annual rasters (2013–2017) within each of five AOIs using GeoJSON masks, and fits AOI-specific regression models. AOI 1 uses a piecewise linear fit with automatic breakpoint optimization; AOI 2–5 use simple linear regression. AOI 5 additionally reports OLS 95% confidence intervals for the slope, both pooled across all years and for 2013 alone. Each AOI panel also plots the global linear fit line (from Fig_3A_global_linear_fit.py) as a reference.
 
@@ -107,7 +107,7 @@ Console outputs:
 
 ---
 
-### `Fig_4_npp_nox_moving_window_regression.py`
+#### `Fig_4_npp_nox_moving_window_regression.py`
 
 Performs the same moving-window linear regression as Fig_1A_S1-S5_moving_window_regression_annual.py, but replaces chlorophyll *a* with NPP as the dependent variable. The regression algorithm, window size (11×11), log1p transformation, filtering criteria (R² ≥ 0.6, minimum 70 valid pixels), and output structure are identical to the chlorophyll version.
 
@@ -121,7 +121,7 @@ Console outputs:
 
 ---
 
-### `Fig_5_npp_nox_aoi_scatter.py`
+#### `Fig_5_npp_nox_aoi_scatter.py`
 
 Extracts pixel-level NPP and NOₓ emission values from annual rasters (2013–2017) within five AOIs using GeoJSON masks. Structure mirrors Fig_3A_global_linear_fit.py but uses NPP instead of chlorophyll *a* as the dependent variable. A pooled OLS regression is fitted using AOI 1–4 only, with AOI 5 fitted separately due to its distinct response. Both fits report slope, intercept, R², and 95% confidence intervals.
 
@@ -135,7 +135,7 @@ Console outputs:
 
 ---
 
-### `Fig_S6-S7_seasonal_chlor_nox_regression.py`
+#### `Fig_S6-S7_seasonal_chlor_nox_regression.py`
 
 Aggregates monthly chlorophyll *a* and NOₓ emission rasters into seasonal composites for summer (Jun–Aug) and winter (Dec–Feb) of 2017. Chlorophyll is averaged across valid months; NOₓ fluxes (kg m⁻² s⁻¹) are integrated over each month's seconds to yield seasonal totals (g m⁻²). Pixels require at least 2 valid months out of 3. The regression algorithm is identical to the annual version.
 
@@ -147,7 +147,7 @@ Intermediate files:
 
 ---
 
-### `Fig_S8-S19_monthly_chlor_nox_regression.py`
+#### `Fig_S8-S19_monthly_chlor_nox_regression.py`
 
 Performs moving-window regression between monthly chlorophyll *a* and NOₓ emissions for each month of 2017 (January–December). The regression algorithm is identical to the annual and seasonal versions. NOₓ monthly mean fluxes (kg m⁻² s⁻¹) are integrated over the actual number of seconds in each month to yield monthly totals (g m⁻²), consistent with the seasonal script.
 
