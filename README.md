@@ -5,7 +5,7 @@
 This repository contains the code used in the study titled:
 
 **Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions**,  
-submitted to ***Science***.
+submitted to ***Nature Sustainability***.
 
 ---
 
@@ -198,6 +198,6 @@ The `all_AOIs_geojson/` directory contains GeoJSON polygon boundaries for the fi
 
 If you reference this work, please cite the associated manuscript:
 
-> H. Lan, X. Zhang, V. J. Coles, G. M. Silsbe, Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions. *Science* (submitted).
+> H. Lan, X. Zhang, V. J. Coles, G. M. Silsbe, Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions. *Nature Sustainability* (submitted).
 
 Full citation details will be updated upon publication.
