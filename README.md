@@ -1,10 +1,10 @@
 # Code and Data for:
 
-## Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions
+## Satellite-detectable impacts of shipping nitrogen emissions on the surface ocean 
 
 This repository contains the code used in the study titled:
 
-**Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions**,  
+**Satellite-detectable impacts of shipping nitrogen emissions on the surface ocean**,  
 submitted to ***Nature Sustainability***.
 
 ---
@@ -170,7 +170,7 @@ The `all_AOIs_geojson/` directory contains GeoJSON polygon boundaries for the fi
 
 ---
 
-## 4. Computing Environment
+## 4. Computing Environment and Reproduction
 
 - **Hardware**
   - Intel® Core™ Ultra 9 Processor 285K (36M Cache, up to 5.70 GHz)
@@ -192,12 +192,37 @@ The `all_AOIs_geojson/` directory contains GeoJSON polygon boundaries for the fi
   - folium: 0.19.4
   - openpyxl: 3.1.5
 
+- **System Requirements**
+  - Runs on any standard desktop or laptop computer with Python 3.12 installed.
+  - No non-standard hardware required (CPU only; no GPU needed).
+  - Tested on Windows 11.
+
+- **Installation**
+  - Install the required packages via pip:
+    
+    pip install numpy==1.26.3 pandas==2.2.3 rasterio==1.4.3 scipy==1.15.1 matplotlib==3.9.1 cartopy==0.24.1 geopandas==1.0.1 scikit-learn==1.6.1 statsmodels==0.14.4 seaborn==0.13.2
+    
+    Typical installation time is under 10 minutes on a normal desktop computer.
+
+- **How to Run**
+  - Each script is run independently from the command line, for example:
+    
+    python Fig_2A_nmean_density_2017.py
+    
+    Update the data directory paths at the top of each script to point to your local copies of the datasets listed in Section 1.
+    Shapefile outputs are then visualized in ArcGIS Pro to produce the final figures.
+
+- **Reproduction**
+  - Each script corresponds to specific figures and quantitative results, as detailed in Section 2.
+  - Slope, R², and confidence interval values reported in the main text and Table are printed to the console when the corresponding scripts are run.
+
 ---
+
 
 ## Citation
 
 If you reference this work, please cite the associated manuscript:
 
-> H. Lan, X. Zhang, V. J. Coles, G. M. Silsbe, Emissions from shipping increase marine phytoplankton biomass in oligotrophic regions. *Nature Sustainability* (submitted).
+> H. Lan, X. Zhang, V. J. Coles, G. M. Silsbe, Satellite-detectable impacts of shipping nitrogen emissions on the surface ocean. *Nature Sustainability* (submitted).
 
 Full citation details will be updated upon publication.
