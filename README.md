@@ -39,7 +39,7 @@ All analyses rely on publicly available datasets:
 
 ## 2. Code
 
-#### `Fig_1A_S1-S5_moving_window_regression_annual.py`
+#### `Fig_1A_2B_s1_to_s5_moving_window_regression_annual.py`
 
 Performs moving-window linear regression (11×11 pixels, log1p-transformed) between satellite-derived chlorophyll *a* concentrations and shipping NOₓ emissions for each year from 2013 to 2017. For each pixel, the regression yields slope, Pearson correlation coefficient (r), R², and p-value. Only pixels with R² ≥ 0.6 are retained.
 
@@ -77,7 +77,7 @@ Outputs per year + pooled (2013–2017):
 
 ---
 
-#### `Fig_3A_global_linear_fit.py`
+#### `Fig_3A_aoi_chlor_nox_scatter.py`
 
 Extracts pixel-level chlorophyll *a* concentrations and NOₓ emission values from annual rasters (2013–2017) within five predefined AOIs using GeoJSON masks. A pooled ordinary least squares regression is fitted using data from AOI 1–4 only, excluding AOI 5 due to its anomalously high response. The regression yields slope, intercept, R², and 95% confidence intervals for the slope and intercept.
 
