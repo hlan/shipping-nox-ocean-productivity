@@ -94,7 +94,7 @@ Console outputs:
 
 #### `Fig_3A_per_aoi_scatter.py`
 
-Extracts pixel-level chlorophyll *a* and NOₓ values from annual rasters (2013–2017) within each of five AOIs using GeoJSON masks, and fits AOI-specific regression models. AOI 1 uses a piecewise linear fit with automatic breakpoint optimization; AOI 2–5 use simple linear regression. AOI 5 additionally reports OLS 95% confidence intervals for the slope, both pooled across all years and for 2013 alone. Each AOI panel also plots the global linear fit line (from Fig_3A_global_linear_fit.py) as a reference.
+Extracts pixel-level chlorophyll *a* and NOₓ values from annual rasters (2013–2017) within each of five AOIs using GeoJSON masks, and fits AOI-specific regression models. AOI 1 uses a piecewise linear fit with automatic breakpoint optimization; AOI 2–5 use simple linear regression. AOI 5 additionally reports OLS 95% confidence intervals for the slope, both pooled across all years and for 2013 alone. Each AOI panel also plots the global linear fit line (from Fig_3A_aoi_chlor_nox_scatter.py) as a reference.
 
 Outputs:
 - One PNG scatter plot per AOI, each showing year-colored points, the AOI-specific fit line (red solid), and the global linear fit line (black dashed). These correspond to the five sub-panels in Fig. 3A.
@@ -109,7 +109,7 @@ Console outputs:
 
 #### `Fig_4_npp_nox_moving_window_regression.py`
 
-Performs the same moving-window linear regression as Fig_1A_S1-S5_moving_window_regression_annual.py, but replaces chlorophyll *a* with NPP as the dependent variable. The regression algorithm, window size (11×11), log1p transformation, filtering criteria (R² ≥ 0.6, minimum 70 valid pixels), and output structure are identical to the chlorophyll version.
+Performs the same moving-window linear regression as Fig_1A_2B_s1_to_s5_moving_window_regression_annual.py, but replaces chlorophyll *a* with NPP as the dependent variable. The regression algorithm, window size (11×11), log1p transformation, filtering criteria (R² ≥ 0.6, minimum 70 valid pixels), and output structure are identical to the chlorophyll version.
 
 Outputs per year:
 - Shapefiles: positive slope, negative slope, all r, r ≥ 0, r < 0. These shapefiles are overlaid with the chlorophyll regression shapefiles in ArcGIS Pro to produce the NPP–NOₓ correlation grids shown in Fig. 4.
@@ -123,7 +123,7 @@ Console outputs:
 
 #### `Fig_5_npp_nox_aoi_scatter.py`
 
-Extracts pixel-level NPP and NOₓ emission values from annual rasters (2013–2017) within five AOIs using GeoJSON masks. Structure mirrors Fig_3A_global_linear_fit.py but uses NPP instead of chlorophyll *a* as the dependent variable. A pooled OLS regression is fitted using AOI 1–4 only, with AOI 5 fitted separately due to its distinct response. Both fits report slope, intercept, R², and 95% confidence intervals.
+Extracts pixel-level NPP and NOₓ emission values from annual rasters (2013–2017) within five AOIs using GeoJSON masks. Structure mirrors Fig_3A_aoi_chlor_nox_scatter.py but uses NPP instead of chlorophyll *a* as the dependent variable. A pooled OLS regression is fitted using AOI 1–4 only, with AOI 5 fitted separately due to its distinct response. Both fits report slope, intercept, R², and 95% confidence intervals.
 
 Outputs:
 - PNG scatter plot showing all five AOIs color-coded with the pooled AOI 1–4 linear fit line. This corresponds to Fig. 5.
@@ -199,9 +199,9 @@ The `all_AOIs_geojson/` directory contains GeoJSON polygon boundaries for the fi
 
 - **Installation**
   - Install the required packages via pip:
-    
+    ```
     pip install numpy==1.26.3 pandas==2.2.3 rasterio==1.4.3 scipy==1.15.1 matplotlib==3.9.1 cartopy==0.24.1 geopandas==1.0.1 scikit-learn==1.6.1 statsmodels==0.14.4 seaborn==0.13.2
-    
+    ```
     Typical installation time is under 10 minutes on a normal desktop computer.
 
 - **How to Run**
