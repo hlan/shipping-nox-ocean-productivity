@@ -97,10 +97,10 @@ Outputs:
 
 #### `Fig_3_Table_1_Table_S22_aoi_fits.py`
 
-Extracts pixel-level chlorophyll *a* concentrations and NOₓ emission values from annual rasters (2013–2017) within five predefined AOIs using GeoJSON masks and fits the regression models of Table 1 on untransformed values: a pooled ordinary least squares regression using AOI 1–4 only, a piecewise linear fit with breakpoint optimization for AOI 1, simple linear regressions for AOI 2–5, and the yearly fits of AOI 2–5 for 2013 to 2017. The fits are repeated with annual SST, PAR and MLD added as covariates to give the slopes after control.
+Extracts pixel-level chlorophyll *a* concentrations and NOₓ emission values from annual rasters (2013–2017) within five predefined AOIs using GeoJSON masks and fits the regression models of Table 1 on untransformed values: a pooled ordinary least squares regression using AOI 1–4 only, simple linear regressions for AOI 1–5, and the yearly fits of AOI 2–5 for 2013 to 2017. The fits are repeated with annual SST, PAR and MLD added as covariates to give the slopes after control.
 
 Outputs:
-- Table 1: the regression models of chlorophyll *a* on NOₓ emissions for the globe (AOI 1–4 pooled) and the five AOIs, with the slope and its 95% confidence interval half-width, intercept and R² before the control, the slope after the control and the AOI 1 breakpoint.
+- Table 1: the regression models of chlorophyll *a* on NOₓ emissions for the globe (AOI 1–4 pooled) and the five AOIs, with the slope and its 95% confidence interval half-width, intercept and R² before the control and the slope after the control.
 - One scatter plot per AOI, each showing year-colored points, the AOI-specific fit line, the global linear fit line pooled across AOI 1–4 and the AOI-specific fit after control, plus a legend strip. These correspond to Fig. 3(a)–(e).
 - Table S22: AOI 5 by year, and the pooled slope against the range of yearly slopes in AOI 2–5, with and without the covariates controlled.
 
